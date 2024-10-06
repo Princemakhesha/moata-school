@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MKK806F7W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-1MKK806F7W');
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Certificate Validation | Moata School</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.png">
+
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <style>
+        #contactModal textarea {
+            width: 100%;
+            padding: 10px;
+            color: #fff;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            /* Ensure padding doesn't affect width */
+            height: auto;
+            /* Allow the height to adjust automatically based on content */
+        }
+
+        /* Style the form container */
+        #contactModal {
+            /* padding: 20px;
+      border-radius: 10px; */
+
+
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Style input fields */
+        #contactModal input[type="text"],
+        #contactModal input[type="email"],
+        #contactModal textarea,
+        #contactModal button {
+            width: 100%;
+            color: #fff;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid red;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        /* Additional styles for the button */
+        #contactModal button {
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            /* Ensure the text is centered */
+        }
+
+        #contactModal button:hover {
+            background-color: purple;
+        }
+    </style>
+
+    <style>
+        .page-footer {
+            background: url('background images/page-footer.jpg') no-repeat center center;
+            /* Replace with your image path */
+            background-size: cover;
+            /* Ensure the image covers the entire footer */
+            color: white;
+            /* Ensure the text is readable against the background */
+            padding: 20px 0;
+            /* Adjust padding as needed */
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .validate-button {
+            background-color: white;
+            color: red;
+            font-size: 0.9rem;
+            display: inline-flex;
+            border: 2px solid red;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .validate-button:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .other-buttons {
+            background-color: white;
+            color: black;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-flex;
+            /* border: 0.5px solid white; */
+            align-items: center;
+            /* justify-content: center; */
+            text-align: center;
+            /* Set default text color to dark green */
+            text-decoration: none;
+            /* Remove underline */
+            transition: background-color 0.3s, color 0.3s;
+            padding: 0 10px;
+            /* Adjust padding to match "Get Certified" button */
+            /* border-radius: 12px; */
+            /* Match the rounded corners of "Get Certified" button */
+            line-height: 2.2rem;
+            /* Match line height to maintain height consistency */
+            display: inline-block;
+
+
+        }
+
+        .other-buttons:hover {
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+    <style>
+        .parallax-container {
+            position: relative;
+            height: 500px;
+            /* Adjust the height as needed */
+            margin-bottom: -100px;
+        }
+
+        .carousel.carousel-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+
+        .carousel .carousel-item img {
+            width: 100%;
+            height: 100%;
+            /* Ensures the images cover the entire carousel */
+            object-fit: cover;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            cursor: pointer;
+            font-size: 48px;
+            /* Increase font size for larger buttons */
+            color: white;
+            /* Button color */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Semi-transparent background */
+            border-radius: 50%;
+            /* Round buttons */
+            padding: 10px;
+            /* Space around icons */
+        }
+
+        .carousel-nav.left {
+            left: 10px;
+        }
+
+        .carousel-nav.right {
+            right: 10px;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            top: 20%;
+            /* Higher on the page */
+            left: 10%;
+            /* Aligned to the left */
+            text-align: left;
+            color: white;
+        }
+
+        .carousel-caption h3,
+        .carousel-caption h1 {
+            margin: 0;
+            /* Remove default margin */
+            padding: 0;
+            /* Remove default padding */
+        }
+
+        .carousel-caption h3 {
+            font-size: 2rem;
+            /* Adjust the size as needed */
+            margin-bottom: 0;
+            /* Remove margin bottom */
+        }
+
+        .carousel-caption h1 {
+            font-size: 2.5rem;
+            /* Adjust the size as needed */
+        }
+
+        .carousel-caption a {
+            margin-top: 20px;
+            /* Adjust spacing between text and button */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid white;
+            /* Thicker dark green outline */
+            background-color: transparent;
+            /* Transparent background */
+            color: darkgreen;
+            /* Dark green text color */
+            font-size: 1.2rem;
+            /* Adjust the font size as needed */
+            padding: 10px 20px;
+            /* Adjust padding as needed */
+            border-radius: 12px;
+            /* Rounded corners */
+            text-align: center;
+            /* Center text */
+            transition: background-color 0.3s, color 0.3s;
+            /* Smooth transition for hover effects */
+        }
+
+        .carousel-caption a:hover {
+            background-color: red;
+            /* Dark green background on hover */
+            color: white;
+            /* White text on hover */
+        }
+
+        .get-certified-btn-smallscreen {
+            /* display: flex; */
+            top: 100%;
+            bottom: 50%;
+            /* bottom: 100px; */
+        }
+
+        .custom-hr {
+            border: none;
+            /* Remove the default border */
+            height: 2px;
+            /* Set the height of the line */
+            /* background-color: #ff4081; Set your desired color */
+            background-color: red;
+            width: 50%;
+            /* Set the width to 50% of the parent element */
+            margin: 0 auto;
+            /* Center the line horizontally */
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        /* Preloader container */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            /* White background with transparency */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Logo animation */
+        @keyframes pulseZoom {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Apply pulse & zoom effect */
+        #preloader img {
+            width: 150px;
+            height: auto;
+            animation: pulseZoom 2s ease-in-out infinite;
+        }
+
+        /* Hide the preloader after the content is loaded */
+        body.loaded #preloader {
+            display: none;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="Moata Logos/Moata-Loader-logo.png" alt="Loading...">
+    </div>
+
+    <script>
+        // Add a dynamic timeout for hiding the preloader
+        window.addEventListener("load", function () {
+            const minLoadTime = 3000; // Minimum load time in milliseconds
+            setTimeout(function () {
+                document.body.classList.add('loaded');
+            }, minLoadTime); // Always wait at least 2 seconds
+        });
+    </script>
+
+    <div class="fixed-action-btn">
+        <a href="https://wa.me/+27713399330"><img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/WhatsApp_icon.png/598px-WhatsApp_icon.png"
+                alt="WhatsApp Button" width="70"></a>
+    </div>
+    <section>
+        <nav class="purple hide-on-med-and-down center contact-navigatory" role="navigation">
+            <div class="nav-wrapper container">
+                <ul class="center hide-on-med-and-down">
+                    <li><a href="tel:+27127713972" class=" white-text">012 771 3972<i
+                                class="material-icons left yellow-text">call</i></a></li>
+                    <li><a href="mailto:info@moataschool.co.za" class="white-text">info@moataschool.co.za<i
+                                class="material-icons left yellow-text">email</i></a></li>
+                    <li><a href="#" class="white-text">Mon - Sat: 9:00 - 18:00<i
+                                class="material-icons left yellow-text">access_time</i></a></li>
+                </ul>
+            </div>
+        </nav>
+    </section>
+
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper">
+            <a id="logo-container" href="index.html" class="brand-logo"><img src="img/favicon.png" width="60"></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html" class="other-buttons">HOME</a></li>
+                <li><a href="services.html" class="other-buttons ">SERVICES</a></li>
+                <li><a href="prices.html" class="other-buttons">COURSE PRICES</a></li>
+                <li><a href="#contact-footer" class="other-buttons">CONTACT</a></li>
+                <li><a href="ppe.html" class="other-buttons">PROTECTIVE CLOTHES</a></li>
+                <li><a href="legal.html" class="other-buttons">LEGAL</a></li>
+                <li><a href="" target="_blank"
+                        class="waves-effect waves-light btn-small red">VALIDATE CERTIFICATE</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="sidenav">
+                <li><a href="index.html" class="black-text">HOME</a></li>
+                <li><a href="services.html" class="black-text">SERVICES</a></li>
+                <li><a href="prices.html" class="black-text">COURSE PRICES</a></li>
+                <li><a href="contact.html" class="black-text">CONTACT</a></li>
+                <!-- Update the href to match the footer id -->
+                <li><a href="ppe.html" class="black-text">PROTECTIVE CLOTHES</a></li>
+                <li><a href="legal.html" class="black-text">LEGAL</a></li>
+                <li><a href="Pre-validate.html" class=" white-text red">VALIDATE CERTIFICATE</a></li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons red-text">menu</i></a>
+        </div>
+    </nav>
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                    <h4 class="center white-text"><strong>The future is exciting!</strong></h4>
+                    <h5 class="center white-text">We’re excited to introduce our new online certificate validation tool!
+                        Easily verify the authenticity of your certificates by entering your identity number. Fast,
+                        secure, and accessible 24/7 for your convenience.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="background images/Backgroundimage.jpg" alt="" width="250"></div>
+    </div>
+
+    <br>
+    <br><br>
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <h4 class="center red-text"><strong>What can you expect?</strong></h4>
+                <div class="col s12 m4">
+
+                    <div class="icon-block">
+                        <h2 class="left-align red-text"><i class="material-icons">timelapse</i></h2>
+                        <h5><strong>Instant Verification</strong></h5>
+                        <hr class="left custom-hr">
+                        <p class="right light">Our new tool offers quick and easy verification of certificates. All you
+                            need to do is enter the certificate holder’s identity number into the search bar. The system
+                            instantly checks our secure database to confirm the validity of the certificate. If the
+                            certificate is valid, the system will display the relevant details within seconds, removing
+                            the hassle of long waiting times for manual validation.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="left-align red-text"><i class="material-icons">picture_as_pdf</i></h2>
+                        <h5><strong>PDF Preview</strong></h5>
+                        <hr class="left custom-hr">
+                        <p class="right light">If the certificate is found, you’ll have the option to preview it
+                            directly on the website in PDF format. This is especially helpful for employers or
+                            institutions looking to verify credentials before hiring or enrollment. The preview feature
+                            allows you to inspect the certificate closely without needing to download it right away,
+                            giving you the flexibility to review it at your own pace.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="left-align red-text"><i class="material-icons">file_download</i></h2>
+                        <h5><strong>Download Option</strong></h5>
+                        <hr class="left custom-hr">
+                        <p class="right light">Once the certificate has been validated, you can download it in PDF
+                            format with a single click. This makes it convenient to store, print, or share the document
+                            as needed. The downloaded PDF is an exact copy of the original certificate, ensuring it
+                            meets all the requirements for authenticity and integrity.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+                <!-- <h4 class="center red-text"><strong>What can you expect?</strong></h4> -->
+                <div class="col s12 m4">
+
+                    <div class="icon-block">
+                        <h2 class="left-align red-text"><i class="material-icons">devices</i></h2>
+                        <h5><strong>Mobile-Friendly</strong></h5>
+                        <hr class="left custom-hr">
+                        <p class="right light">Our certificate validation tool is optimized for mobile use, so you can
+                            verify certificates on-the-go. Whether you’re accessing the site from your phone, tablet, or
+                            desktop, the tool is designed to provide a smooth and responsive user experience across all
+                            devices.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="left-align red-text"><i class="material-icons">error_outline</i></h2>
+                        <h5><strong>Error Handling & Feedback</strong></h5>
+                        <hr class="left custom-hr">
+                        <p class="right light">The system is equipped with robust error handling. If a certificate
+                            doesn’t
+                            exist, or if an invalid identity number is entered, a clear and immediate error message will
+                            be
+                            displayed, allowing the user to correct mistakes or confirm the certificate status without
+                            delay.</p>
+                    </div>
+                </div>
+
+                <div class="col s12 m4">
+                    <div class="icon-block">
+                        <h2 class="left-align red-text"><i class="material-icons">enhanced_encryption</i></h2>
+                        <h5><strong>Secure & Confidential</strong></h5>
+                        <hr class="left custom-hr">
+                        <p class="right light">We take data privacy and security seriously. All searches and certificate
+                            information are handled securely, ensuring that personal information and certificate details
+                            are
+                            protected. The validation process adheres to the latest security standards.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <h4 class="center red-text"><strong>How does it work?</strong></h4>
+            <div class="col s12 m8 l4">
+
+                <div class="icon-block">
+                    <h5><strong>Getting Started</strong></h5>
+                    <hr class="left custom-hr">
+                    <p class="right light">This system is not yet live for professional use. However, you are more
+                        that welcome to test it out with our dummy credentials. <br> To get started with the test of
+                        this system visit: <a href="https://certificates.moataschool.co.za/" target="_blank"
+                            class="red-text">www.certificates.moataschool.co.za</a><br> When you get the above link
+                        address, the system will require an Identity number of the certififcate to be validated (see
+                        preview). This is where you enter the below dummy Identity Number.<br> <strong>Dummy Identity
+                            Number: 123456789</strong><br> Once the dummy Identity Number has been entered, the system will show a pdf preview of the dummy certificate (see below).</p>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="icon-block">
+                    <img class="center col s12 m6 l7" src="Certificates-Validation.png" width="">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <!-- <h4 class="center red-text"><strong>How does it work?</strong></h4> -->
+            <div class="col s12 m8 l4">
+
+                <div class="icon-block">
+                    <h5><strong>Error Handling & Feedback</strong></h5>
+                    <hr class="left custom-hr">
+                    <p class="right light">The system is equipped with robust error handling. If a certificate
+                        doesn’t
+                        exist, or if an invalid identity number is entered, a clear and immediate error message will
+                        be
+                        displayed, allowing the user to correct mistakes or confirm the certificate status without
+                        delay.</p>
+                        <h7><strong>When no Identity Number is entered</strong> </h7>
+                        <hr class="left custom-hr">
+                        <p class="light">When no Identity Number is entered, the system will send an error prompt ("<a class="red-text">Please enter Identity Number to validate.</a>")</p>
+                        <h7><strong>When incorrect Identity Number is entered</strong> </h7>
+                        <hr class="left custom-hr">
+                        <p class="light">When incorrect Identity Number is entered, the system will send an error prompt ("<a class="red-text">Certificate does not exist in our database.</a>")</p>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="icon-block">
+                    <img class="center col s12 m6 l7" src="errror handling.png" width="">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="section">
+
+        <!--   Icon Section   -->
+        <div class="row">
+            <!-- <h4 class="center red-text"><strong>How does it work?</strong></h4> -->
+            <div class="col s12 m8 l4">
+
+                <div class="icon-block">
+                    <h5><strong>Successful Validation</strong></h5>
+                    <hr class="left custom-hr">
+                    <p class="right light">All you need to do is enter the certificate holder’s identity number into the search bar. The system instantly checks our secure database to confirm the validity of the certificate. If the certificate is valid, the system will display the relevant details within seconds, removing the hassle of long waiting times for manual validation.</p>
+                        <h7><strong>PDF Preview</strong> </h7><br>
+                        <hr class="left custom-hr">
+                        <p class="light">When the certificate is found, you’ll have the option to preview it directly on the website in PDF format.</p>
+                        <h7><strong>Download Option</strong> </h7><br>
+                        <hr class="left custom-hr">
+                        <p class="light">Once the certificate has been validated, you can download it in PDF format with a single click.</p>
+                </div>
+            </div>
+
+            <div class="">
+                <div class="icon-block">
+                    <img class="center col s12 m6 l7" src="success certificate.png" width="">
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer class="page-footer" id="contact-footer">
+        <div class="">
+            <div class="row">
+                <div class="col l4 s12">
+                    <h5 class="white-text">About Us</h5>
+                    <ul><a id="logo-container" class="brand-logo"><img src="Moata Logos/moata-group.png"
+                                width="200"></a></ul>
+                    <ul><strong>Moata School Pty Ltd</strong> ("the parent") and <strong>Mitana Training
+                            Consultants</strong>
+                        ("the subsidiary") are compliant fully registered and accredited training providers of Heavy
+                        Vehicles
+                        courses, Lifting & Safety courses, Artisan courses, Mining courses, etc. To learn more about our
+                        Compliance
+                        and Legal standing <a href="legal.html" class="red-text">click here.</a> </ul>
+                    <ul>
+                        <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>CETA
+                                accreditation
+                                number: ACC/22/07/00019</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>TETA
+                                accreditation
+                                number: TETA21-1318</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="grey-text text-lighten-4"><i
+                                    class="material-icons left red-text">check</i>DEPARTMENT OF
+                                LABOUR APPROVAL NUMBER: DMR 930</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>BBEEE:
+                                LEVEL 1
+                                CONTRIBUTOR</a></li>
+                    </ul>
+
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Contact Info</h5>
+                    <ul>
+                        <li><a href="https://maps.app.goo.gl/z5KqYy9TiVWQWsJU9" target="_blank" class="white-text"><i
+                                    class="material-icons left red-text">location_on</i>296 Justice Mahommed, Shop 3A
+                                Barclay Square
+                                Shopping Centre, Pretoria, 0002.</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="tel:+27127713972" class="white-text"><i
+                                    class="material-icons left red-text">call</i>012 771
+                                3972</a>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li><a href="mailto:info@moataschool.co.za" class="white-text"><i
+                                    class="material-icons left red-text">email</i>info@moataschool.co.za</a></li>
+                    </ul>
+                    <ul>
+                        <li><a class="white-text"><i class="material-icons left red-text">access_time</i>Mon - Sat: 9:00
+                                - 18:00</a>
+                        </li>
+                    </ul>
+                    <h5 class="white-text">Connect with us</h5>
+                    <ul>
+                        <a class="white-text" href="https://www.facebook.com/moataschoolZA"><img
+                                src="moata-icons/Facebook.png" width="40"></a>
+                        <a class="white-text" href="https://www.instagram.com/moataschool"><img
+                                src="moata-icons/Instagram.png" width="40"></a>
+                        <a class="white-text" href=""><img src="moata-icons/X.png" width="40"></a>
+                        <a class="white-text" href="https://www.tiktok.com/@moataschoolza"><img
+                                src="moata-icons/TikTok.png" width="40"></a>
+                        <a class="white-text" href="https://www.youtube.com/@moataschool3264"><img
+                                src="moata-icons/YouTube.png" width="40"></a>
+                    </ul>
+
+                </div>
+                <div class="col l5 s12">
+                    <h5 class="white-text">Leave us a feedback</h5>
+                    <!-- Contact Form -->
+                    <section>
+                        <div class="col s12 m20 l6">
+                            <div id="contactModal" class="">
+                                <div class="modal-content">
+                                    <form method="post" action="your_script.php" id="contactModal">
+                                        <label for="name" class="black-text"></label>
+                                        <input type="text" name="name" id="name" placeholder="Name*" required>
+                                        <!-- <br> -->
+                                        <label for="email" class="black-text"></label>
+                                        <input type="email" name="email" id="email" placeholder="Email*" required>
+                                        <!-- <br> -->
+                                        <label for="subject" class="black-text"></label>
+                                        <input type="text" name="subject" id="subject" placeholder="Subject">
+                                        <!-- <br> -->
+                                        <label for="message" class="black-text"></label>
+                                        <textarea name="message" id="message" placeholder="Write Your Message Here*"
+                                            required cols="30" rows="5"></textarea>
+                                        <!-- <br> -->
+                                        <button class="" id="btn"><a class="white-text">Send</a></button>
+                                    </form>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <section>
+
+                        <script src="https://smtpjs.com/v3/smtp.js"></script>
+                        <script>
+                            var btn = document.getElementById('btn');
+                            btn.addEventListener('click', function (e) {
+                                e.preventDefault();
+
+                                var name = document.getElementById('name').value;
+                                var email = document.getElementById('email').value;
+                                var subject = document.getElementById('subject').value;
+                                var message = document.getElementById('message').value;
+
+                                // Check if any required fields are empty
+                                if (!name || !email || !message) {
+                                    alert("Please fill in all the required fields.");
+                                    return; // Prevent sending the email if fields are missing
+                                }
+
+                                var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+
+                                Email.send({
+                                    SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", //for messages.semtexagecny@outlook.com
+                                    To: 'messages.semtexagency@outlook.com',
+                                    From: "messages.semtexagency@outlook.com",
+                                    Subject: "Urgent: A client is trying to get in touch - Moata school home page",
+                                    Body: body
+                                }).then(
+                                    function (message) {
+                                        alert("Thank you, we will be in touch shortly!");
+
+                                        // Clear form fields after successful submission
+                                        setTimeout(function () {
+                                            document.getElementById('name').value = '';
+                                            document.getElementById('email').value = '';
+                                            document.getElementById('subject').value = '';
+                                            document.getElementById('message').value = '';
+                                        }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+                                    }
+                                ).catch(
+                                    function (error) {
+                                        console.log("Email sending error:", error);
+                                    }
+                                );
+                            });
+                        </script>
+
+                        <!-- form ends here -->
+
+                    </section>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                Copyright © 2024 Moata School (Pty) Ltd. All Rights Reserved. Designed by <a
+                    class="white-text text-indigo-darken-4" href="https://www.semtexagency.co.za">Semtex Agency</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
+
+</body>
+
+</html>

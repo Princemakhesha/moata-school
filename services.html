@@ -3,14 +3,14 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MKK806F7W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MKK806F7W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-  gtag('config', 'G-1MKK806F7W');
-</script>
+        gtag('config', 'G-1MKK806F7W');
+    </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Our Services | Moata School</title>
@@ -81,7 +81,7 @@
 
     <style>
         .page-footer {
-            background: url('page-footer.jpg') no-repeat center center;
+            background: url('background images/page-footer.jpg') no-repeat center center;
             /* Replace with your image path */
             background-size: cover;
             /* Ensure the image covers the entire footer */
@@ -94,11 +94,131 @@
         html {
             scroll-behavior: smooth;
         }
+
+        .validate-button {
+            background-color: white;
+            color: red;
+            font-size: 0.9rem;
+            display: inline-flex;
+            border: 2px solid red;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+        }
+
+        .validate-button:hover {
+            background-color: red;
+            color: white;
+        }
+
+        .custom-hr {
+            border: none;
+            /* Remove the default border */
+            height: 2px;
+            /* Set the height of the line */
+            /* background-color: #ff4081; Set your desired color */
+            background-color: red;
+            width: 100%;
+            /* Set the width to 50% of the parent element */
+            margin: 0 auto;
+            /* Center the line horizontally */
+        }
+    </style>
+
+    <style>
+        /* Preloader container */
+        #preloader {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            /* White background with transparency */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Logo animation */
+        @keyframes pulseZoom {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            50% {
+                transform: scale(1.3);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        /* Apply pulse & zoom effect */
+        #preloader img {
+            width: 150px;
+            height: auto;
+            animation: pulseZoom 2s ease-in-out infinite;
+        }
+
+        /* Hide the preloader after the content is loaded */
+        body.loaded #preloader {
+            display: none;
+        }
+
+        .other-buttons {
+      background-color: white;
+      color: black;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-flex;
+      /* border: 0.5px solid white; */
+      align-items: center;
+      /* justify-content: center; */
+      text-align: center;
+      /* Set default text color to dark green */
+      text-decoration: none;
+      /* Remove underline */
+      transition: background-color 0.3s, color 0.3s;
+      padding: 0 10px;
+      /* Adjust padding to match "Get Certified" button */
+      /* border-radius: 12px; */
+      /* Match the rounded corners of "Get Certified" button */
+      line-height: 2.2rem;
+      /* Match line height to maintain height consistency */
+      display: inline-block;
+
+
+    }
+
+    .other-buttons:hover {
+      background-color: red;
+      color: white;
+    }
     </style>
 
 </head>
 
 <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <img src="Moata Logos/Moata-Loader-logo.png" alt="Loading...">
+    </div>
+
+    <script>
+        // Add a dynamic timeout for hiding the preloader
+        window.addEventListener("load", function () {
+            const minLoadTime = 3000; // Minimum load time in milliseconds
+            setTimeout(function () {
+                document.body.classList.add('loaded');
+            }, minLoadTime); // Always wait at least 2 seconds
+        });
+    </script>
 
     <div class="fixed-action-btn">
         <a href="https://wa.me/+27713399330"><img
@@ -121,16 +241,17 @@
     </section>
 
     <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
+        <div class="nav-wrapper">
             <a id="logo-container" href="index.html" class="brand-logo"><img src="img/favicon.png" width="60"></a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="index.html" class="black-text">HOME</a></li>
-                <li><a href="services.html" class="waves-effect waves-light btn-large red">SERVICES</a></li>
-                <li><a href="prices.html" class="black-text">COURSE PRICES</a></li>
-                <li><a href="#contact-footer" class="black-text">CONTACT</a></li>
-                <!-- Update the href to match the footer id -->
-                <li><a href="ppe.html" class="black-text">PROTECTIVE CLOTHES</a></li>
-                <li><a href="legal.html" class="black-text">LEGAL</a></li>
+                <li><a href="index.html" class="other-buttons">HOME</a></li>
+                <li><a href="services.html" class="waves-effect waves-light btn-small red">SERVICES</a></li>
+                <li><a href="prices.html" class="other-buttons">COURSE PRICES</a></li>
+                <li><a href="#contact-footer" class="other-buttons">CONTACT</a></li>
+                <li><a href="ppe.html" class="other-buttons">PROTECTIVE CLOTHES</a></li>
+                <li><a href="legal.html" class="other-buttons">LEGAL</a></li>
+                <li><a href="Pre-validate.html"
+                        class="validate-button waves-effect waves-light btn-small">VALIDATE CERTIFICATE</a></li>
             </ul>
 
             <ul id="nav-mobile" class="sidenav">
@@ -141,6 +262,7 @@
                 <!-- Update the href to match the footer id -->
                 <li><a href="ppe.html" class="black-text">PROTECTIVE CLOTHES</a></li>
                 <li><a href="legal.html" class="black-text">LEGAL</a></li>
+                <li><a href="Pre-validate.html" class=" red-text">VALIDATE CERTIFICATE</a></li>
             </ul>
             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons red-text">menu</i></a>
         </div>
@@ -152,7 +274,7 @@
                 <div class="col s12 center">
                     <h3><i class="mdi-content-send brown-text"></i></h3>
                     <h4>Check Out Some Of The Courses We Offer!</h4>
-                    <hr>
+                    <hr class="custom-hr">
                 </div>
             </div>
 
@@ -160,71 +282,96 @@
                 <div class="col s12 m6">
                     <ul class="collapsible">
                         <li class="active">
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SHE Rep(House keeping)
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SHE Rep(House
+                                keeping)
                                 in a workplace.</div>
                             <div class="collapsible-body"><span>Learn how to maintain occupational health,safety and
                                     general housekeeping at NQF level 3 and 8 credits.Training duration is 80 notional
                                     hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a Mobile crane
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
+                                Mobile crane
                                 course(C33, C34, C36, C37, C38, C41, C42, C42, C43)</div>
                             <div class="collapsible-body"><span>Learn how to operate a Mobile crane at NQF level 02 and
                                     20 credits.
                                     Training duration is 200 notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a service truck
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
+                                service truck
                             </div>
                             <div class="collapsible-body"><span>Learn how to operate a service truck at NQF level 02 and
                                     08 credits.
                                     Training duration is 80 notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate C30/C31-Overhead
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate
+                                C30/C31-Overhead
                                 crane.</div>
                             <div class="collapsible-body"><span>SAQA US ID 116235
                                     Learn how to operate an overhead crane.
                                     NQF level 02 and 5 credits.Training duration is 50 notional hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>First Aid Level 1</div>
-                            <div class="collapsible-body"><span>Learn how to perform basic life support and first aid procedures at NQF level 01 and 5 credits.Training duration is 50 notional hours.</span></div>
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>First Aid Level
+                                1</div>
+                            <div class="collapsible-body"><span>Learn how to perform basic life support and first aid
+                                    procedures at NQF level 01 and 5 credits.Training duration is 50 notional
+                                    hours.</span></div>
                         </li>
                         <li>
                             <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
                                 forklift(Counter balanced lift trucks F1,F2,F3,F4)</div>
-                            <div class="collapsible-body"><span>Learn how to operate Counter balanced lift trucks at NQF level 03 and 07 credits.Training duration is 70 notional hours. SAQA US ID 242974.</span></div>
+                            <div class="collapsible-body"><span>Learn how to operate Counter balanced lift trucks at NQF
+                                    level 03 and 07 credits.Training duration is 70 notional hours. SAQA US ID
+                                    242974.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Conduct workplace
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Conduct
+                                workplace
                                 occupational Health and Safety(OHS) Inspections.</div>
-                            <div class="collapsible-body"><span>Learn how to maintain and Inspect occupational health, safety and general housekeeping at NQF level 02 and 03 credits, Training duration is 30 notional hours.SAQA US ID 259619.</span></div>
+                            <div class="collapsible-body"><span>Learn how to maintain and Inspect occupational health,
+                                    safety and general housekeeping at NQF level 02 and 03 credits, Training duration is
+                                    30 notional hours.SAQA US ID 259619.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Apply occupational
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Apply
+                                occupational
                                 health, safety and environmental principles.</div>
-                            <div class="collapsible-body"><span>Learn how to apply occupational health, safety and environmental principles at NQF level 03 and 10 credits.Training duration is 100 notional hours.SAQA US ID 113852.</span></div>
+                            <div class="collapsible-body"><span>Learn how to apply occupational health, safety and
+                                    environmental principles at NQF level 03 and 10 credits.Training duration is 100
+                                    notional hours.SAQA US ID 113852.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a tracked
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
+                                tracked
                                 dozer(BULLDOZER)</div>
-                            <div class="collapsible-body"><span>Earn a Bulldozer certificate at NQF level 02 and 15 credits. Training duration is 150 notional hours</span></div>
+                            <div class="collapsible-body"><span>Earn a Bulldozer certificate at NQF level 02 and 15
+                                    credits. Training duration is 150 notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a skid steer
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a skid
+                                steer
                                 loader(a BOB CAT)</div>
-                            <div class="collapsible-body"><span>Learn how to operate a Bob cat at NQF level 2 and 8 credits.Training duration is 80 notional hours.</span></div>
+                            <div class="collapsible-body"><span>Learn how to operate a Bob cat at NQF level 2 and 8
+                                    credits.Training duration is 80 notional hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a Telescopic
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
+                                Telescopic
                                 Boom Handler</div>
-                            <div class="collapsible-body"><span>Learn how to operate a telescopic boom handler SAQA US ID 260781 at NQF level 3 and 10 credits.Training duration is 100 notional hours.</span></div>
+                            <div class="collapsible-body"><span>Learn how to operate a telescopic boom handler SAQA US
+                                    ID 260781 at NQF level 3 and 10 credits.Training duration is 100 notional
+                                    hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate mobile elevating
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate mobile
+                                elevating
                                 worK platform(MEWP)</div>
-                            <div class="collapsible-body"><span>Learn how to operate a cherry Picker/ MEWP SQA US ID 243272 at NQF level 02 and 10 credits.Training duration is 100 notional hours</span></div>
+                            <div class="collapsible-body"><span>Learn how to operate a cherry Picker/ MEWP SQA US ID
+                                    243272 at NQF level 02 and 10 credits.Training duration is 100 notional hours</span>
+                            </div>
                         </li>
                         <!-- Add more courses as needed -->
                     </ul>
@@ -232,61 +379,86 @@
                 <div class="col s12 m6">
                     <ul class="collapsible">
                         <li class="active">
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate an Excavator
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate an
+                                Excavator
                             </div>
-                            <div class="collapsible-body"><span>Earn an Excavator qualification at NQF level 05 and 06 credits. Training duration is 60 notional hours</span></div>
+                            <div class="collapsible-body"><span>Earn an Excavator qualification at NQF level 05 and 06
+                                    credits. Training duration is 60 notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a Front end
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a Front
+                                end
                                 loader.</div>
-                            <div class="collapsible-body"><span>Learn how to operate a front end loader at NQF level 2 and 12 credits.Training duration is 120 notional hours.</span></div>
+                            <div class="collapsible-body"><span>Learn how to operate a front end loader at NQF level 2
+                                    and 12 credits.Training duration is 120 notional hours.</span></div>
                         </li>
                         <li>
                             <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
                                 Backhoe/Loader(TLB)</div>
-                            <div class="collapsible-body"><span>Learn how to operate a TLB at NQF level 02 and 15 credits.Training duration is 150 notional hours.</span></div>
+                            <div class="collapsible-body"><span>Learn how to operate a TLB at NQF level 02 and 15
+                                    credits.Training duration is 150 notional hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a Grader</div>
-                            <div class="collapsible-body"><span>Learn how to operate Grader at NQF level 02 and 15 credits.Training duration is 150 notional hours</span></div>
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
+                                Grader</div>
+                            <div class="collapsible-body"><span>Learn how to operate Grader at NQF level 02 and 15
+                                    credits.Training duration is 150 notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate articulated dump
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate
+                                articulated dump
                                 truck(ADT)</div>
-                            <div class="collapsible-body"><span>Earn an ADT certificate at NQF level 02 and 10 credits. Training duration is 100 notional hours</span></div>
+                            <div class="collapsible-body"><span>Earn an ADT certificate at NQF level 02 and 10 credits.
+                                    Training duration is 100 notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Fire fighting level 1-2
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Fire fighting
+                                level 1-2
                             </div>
-                            <div class="collapsible-body"><span>Learn how to perform basic fire fighting at NQF level 2 and 4 credits.Training duration is 40 notional hours.</span></div>
+                            <div class="collapsible-body"><span>Learn how to perform basic fire fighting at NQF level 2
+                                    and 4 credits.Training duration is 40 notional hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Respond and Clean a
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Respond and
+                                Clean a
                                 Spill/HAZMATS/Incident Investigation/HAZCHEM</div>
-                            <div class="collapsible-body"><span>Learn how to conduct an investigation into workplace incidents at NQF level 3 and 5 credits.Training duration is 50 notional hours.</span></div>
+                            <div class="collapsible-body"><span>Learn how to conduct an investigation into workplace
+                                    incidents at NQF level 3 and 5 credits.Training duration is 50 notional
+                                    hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SAQA US ID 229998
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SAQA US ID
+                                229998
                                 Working at Height.</div>
-                            <div class="collapsible-body"><span>Learn how to explain and perform fall arrest techniques when working at Height at NQF level 01 and 02 credits.Training duration is 20 notional hours</span></div>
+                            <div class="collapsible-body"><span>Learn how to explain and perform fall arrest techniques
+                                    when working at Height at NQF level 01 and 02 credits.Training duration is 20
+                                    notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SAQA US ID 229995
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SAQA US ID
+                                229995
                                 Implement the Fall Protection Plan.</div>
-                            <div class="collapsible-body"><span>Earn this certificate at NQF level 02 and 03 credits. Training duration is 30 notional hours</span></div>
+                            <div class="collapsible-body"><span>Earn this certificate at NQF level 02 and 03 credits.
+                                    Training duration is 30 notional hours</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SAQA US ID 243275
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>SAQA US ID
+                                243275
                                 Scaffolding Erector.</div>
-                            <div class="collapsible-body"><span>Learn how to erect and dismantle scaffolding at NQF level 1 and 4 credits.Training duration is 40 notional hours.</span></div>
+                            <div class="collapsible-body"><span>Learn how to erect and dismantle scaffolding at NQF
+                                    level 1 and 4 credits.Training duration is 40 notional hours.</span></div>
                         </li>
                         <li>
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a sideboom</div>
-                            <div class="collapsible-body"><span>Learn how to operate a sideboom at NQF level 2 and 8 credits.Training duration is 50 notional hours.</span></div>
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
+                                sideboom</div>
+                            <div class="collapsible-body"><span>Learn how to operate a sideboom at NQF level 2 and 8
+                                    credits.Training duration is 50 notional hours.</span></div>
                         </li>
                         <li class="active">
-                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a scraper</div>
-                            <div class="collapsible-body"><span>Learn how to operate a scraper at NQF level 02 and 12 credits.Training duration is 120 notional hours</span></div>
+                            <div class="collapsible-header"><i class="material-icons red-text">school</i>Operate a
+                                scraper</div>
+                            <div class="collapsible-body"><span>Learn how to operate a scraper at NQF level 02 and 12
+                                    credits.Training duration is 120 notional hours</span></div>
                         </li>
                         <!-- Add more courses as needed -->
                     </ul>
@@ -300,6 +472,11 @@
             <div class="row">
                 <div class="col l4 s12">
                     <h5 class="white-text">About Us</h5>
+                    <ul><a id="logo-container" class="brand-logo"><img src="Moata Logos/moata-group.png" width="200"></a></ul>
+                    <ul><strong>Moata School Pty Ltd</strong> ("the parent") and <strong>Mitana Training Consultants</strong>
+                      ("the subsidiary") are compliant fully registered and accredited training providers of Heavy Vehicles
+                      courses, Lifting & Safety courses, Artisan courses, Mining courses, etc. To learn more about our Compliance
+                      and Legal standing <a href="legal.html" class="red-text">click here.</a> </ul>
                     <ul>
                         <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>CETA
                                 accreditation number: ACC/22/07/00019</a></li>
@@ -321,7 +498,8 @@
                 <div class="col l3 s12">
                     <h5 class="white-text">Contact Info</h5>
                     <ul>
-                        <li><a class="white-text"><i class="material-icons left red-text">location_on</i>296 Justice
+                        <li><a href="https://maps.app.goo.gl/z5KqYy9TiVWQWsJU9" target="_blank" class="white-text"><i
+                                    class="material-icons left red-text">location_on</i>296 Justice
                                 Mahommed, Shop 3A Barclay Square Shopping Centre, Pretoria, 0002.</a>
                         </li>
                     </ul>
@@ -341,14 +519,15 @@
                     <h5 class="white-text">Connect with us</h5>
                     <ul>
                         <a class="white-text" href="https://www.facebook.com/moataschoolZA"><img
-                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png"
-                            width="38"></a>
-                            <a class="white-text" href="https://www.instagram.com/moataschool"><img src="insta.png" width="40"></a>
-                        <a class="white-text" href=""><img src="twitter_x.png" width="40"></a>
-                        <a class="white-text" href="https://www.tiktok.com/@moataschoolza"><img src="icons/tiktok.png" width="43"></a>
-                        <a class="white-text" href="https://www.youtube.com/@moataschool3264"><img src="youtube_black.png"
-                            width="40"></a>
-                      </ul>
+                                src="moata-icons/Facebook.png" width="40"></a>
+                        <a class="white-text" href="https://www.instagram.com/moataschool"><img
+                                src="moata-icons/Instagram.png" width="40"></a>
+                        <a class="white-text" href=""><img src="moata-icons/X.png" width="40"></a>
+                        <a class="white-text" href="https://www.tiktok.com/@moataschoolza"><img
+                                src="moata-icons/TikTok.png" width="40"></a>
+                        <a class="white-text" href="https://www.youtube.com/@moataschool3264"><img
+                                src="moata-icons/YouTube.png" width="40"></a>
+                    </ul>
 
                 </div>
                 <div class="col l5 s12">

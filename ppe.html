@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1MKK806F7W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1MKK806F7W"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-1MKK806F7W');
-</script>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    gtag('config', 'G-1MKK806F7W');
+  </script>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Protective Clothes | Moata School</title>
   <link rel="icon" type="image/x-icon" href="img/favicon.png">
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
 
   <style>
     #contactModal textarea {
@@ -47,54 +48,176 @@
 
     /* Style input fields */
     #contactModal input[type="text"],
-#contactModal input[type="email"],
-#contactModal textarea,
-#contactModal button {
-  width: 100%;
-  padding: 10px;
-  color: #fff;
-  margin-bottom: 15px;
-  border: 1px solid red;
-  border-radius: 5px;
-  font-size: 16px;
-  box-sizing: border-box;
-}
+    #contactModal input[type="email"],
+    #contactModal textarea,
+    #contactModal button {
+      width: 100%;
+      padding: 10px;
+      color: #fff;
+      margin-bottom: 15px;
+      border: 1px solid red;
+      border-radius: 5px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
 
-/* Additional styles for the button */
-#contactModal button {
-  background-color: red;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center; /* Ensure the text is centered */
-}
+    /* Additional styles for the button */
+    #contactModal button {
+      background-color: red;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      /* Ensure the text is centered */
+    }
 
-#contactModal button:hover {
-  background-color: purple;
-}
-
+    #contactModal button:hover {
+      background-color: purple;
+    }
   </style>
 
-<style>
-  .page-footer {
-    background: url('page-footer.jpg') no-repeat center center; /* Replace with your image path */
-    background-size: cover; /* Ensure the image covers the entire footer */
-    color: white; /* Ensure the text is readable against the background */
-    padding: 20px 0; /* Adjust padding as needed */
-  }
+  <style>
+    .page-footer {
+      background: url('background images/page-footer.jpg') no-repeat center center;
+      /* Replace with your image path */
+      background-size: cover;
+      /* Ensure the image covers the entire footer */
+      color: white;
+      /* Ensure the text is readable against the background */
+      padding: 20px 0;
+      /* Adjust padding as needed */
+    }
 
-  html {
-  scroll-behavior: smooth;
-}
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .validate-button {
+      background-color: white;
+      color: red;
+      font-size: 0.9rem;
+      display: inline-flex;
+      border: 2px solid red;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+    }
+
+    .validate-button:hover {
+      background-color: red;
+      color: white;
+    }
+
+    .custom-hr {
+      border: none;
+      /* Remove the default border */
+      height: 2px;
+      /* Set the height of the line */
+      /* background-color: #ff4081; Set your desired color */
+      background-color: red;
+      width: 100%;
+      /* Set the width to 50% of the parent element */
+      margin: 0 auto;
+      /* Center the line horizontally */
+    }
+  </style>
+
+  <style>
+    /* Preloader container */
+    #preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.8);
+      /* White background with transparency */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    /* Logo animation */
+    @keyframes pulseZoom {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.3);
+        opacity: 0.6;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Apply pulse & zoom effect */
+    #preloader img {
+      width: 150px;
+      height: auto;
+      animation: pulseZoom 2s ease-in-out infinite;
+    }
+
+    /* Hide the preloader after the content is loaded */
+    body.loaded #preloader {
+      display: none;
+    }
+    .other-buttons {
+      background-color: white;
+      color: black;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: inline-flex;
+      /* border: 0.5px solid white; */
+      align-items: center;
+      /* justify-content: center; */
+      text-align: center;
+      /* Set default text color to dark green */
+      text-decoration: none;
+      /* Remove underline */
+      transition: background-color 0.3s, color 0.3s;
+      padding: 0 10px;
+      /* Adjust padding to match "Get Certified" button */
+      /* border-radius: 12px; */
+      /* Match the rounded corners of "Get Certified" button */
+      line-height: 2.2rem;
+      /* Match line height to maintain height consistency */
+      display: inline-block;
 
 
-</style>
+    }
+
+    .other-buttons:hover {
+      background-color: red;
+      color: white;
+    }
+  </style>
 
 </head>
+
 <body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="Moata Logos/Moata-Loader-logo.png" alt="Loading...">
+  </div>
+
+  <script>
+    // Add a dynamic timeout for hiding the preloader
+    window.addEventListener("load", function () {
+      const minLoadTime = 3000; // Minimum load time in milliseconds
+      setTimeout(function () {
+        document.body.classList.add('loaded');
+      }, minLoadTime); // Always wait at least 2 seconds
+    });
+  </script>
 
   <div class="fixed-action-btn">
     <a href="https://wa.me/+27713399330"><img
@@ -103,13 +226,13 @@
   </div>
   <section>
     <nav class="purple hide-on-med-and-down center" role="navigation">
-      <div class="nav-wrapper container"> 
+      <div class="nav-wrapper container">
         <ul class="center hide-on-med-and-down">
           <li><a href="tel:+27127713972" class=" white-text">012 771 3972<i
-            class="material-icons left yellow-text">call</i></a></li>
-            <li><a href="mailto:info@moataschool.co.za" class="white-text">info@moataschool.co.za<i
-              class="material-icons left yellow-text">email</i></a></li>
-              <li><a href="#" class="white-text">Mon - Sat: 9:00 - 18:00<i
+                class="material-icons left yellow-text">call</i></a></li>
+          <li><a href="mailto:info@moataschool.co.za" class="white-text">info@moataschool.co.za<i
+                class="material-icons left yellow-text">email</i></a></li>
+          <li><a href="#" class="white-text">Mon - Sat: 9:00 - 18:00<i
                 class="material-icons left yellow-text">access_time</i></a></li>
         </ul>
       </div>
@@ -117,15 +240,17 @@
   </section>
 
   <nav class="white" role="navigation">
-    <div class="nav-wrapper container">
+    <div class="nav-wrapper">
       <a id="logo-container" href="index.html" class="brand-logo"><img src="img/favicon.png" width="60"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="index.html" class="black-text">HOME</a></li>
-        <li><a href="services.html" class="black-text">SERVICES</a></li>
-        <li><a href="prices.html" class="black-text">COURSE PRICES</a></li>
-        <li><a href="#contact-footer" class="black-text">CONTACT</a></li> <!-- Update the href to match the footer id -->
-        <li><a href="ppe.html" class="waves-effect waves-light btn-large red">PROTECTIVE CLOTHES</a></li>
-        <li><a href="legal.html" class="black-text">LEGAL</a></li>
+        <li><a href="index.html" class="other-buttons">HOME</a></li>
+        <li><a href="services.html" class="other-buttons">SERVICES</a></li>
+        <li><a href="prices.html" class="other-buttons">COURSE PRICES</a></li>
+        <li><a href="#contact-footer" class="other-buttons">CONTACT</a></li>
+        <li><a href="ppe.html" class="waves-effect waves-light btn-small red">PROTECTIVE CLOTHES</a></li>
+        <li><a href="legal.html" class="other-buttons">LEGAL</a></li>
+        <li><a href="Pre-validate.html"
+            class="validate-button waves-effect waves-light btn-small">VALIDATE CERTIFICATE</a></li>
       </ul>
 
       <ul id="nav-mobile" class="sidenav">
@@ -135,6 +260,7 @@
         <li><a href="contact.html" class="black-text">CONTACT</a></li> <!-- Update the href to match the footer id -->
         <li><a href="ppe.html" class="white-text red">PROTECTIVE CLOTHES</a></li>
         <li><a href="legal.html" class="black-text">LEGAL</a></li>
+        <li><a href="Pre-validate.html" class=" red-text">VALIDATE CERTIFICATE</a></li>
       </ul>
       <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons red-text">menu</i></a>
     </div>
@@ -146,40 +272,77 @@
         <div class="col s12 center">
           <h3><i class="mdi-content-send brown-text"></i></h3>
           <h4>Protective Clothes (PPE)</h4>
-          <hr>
-          <p class="left-align light">We have an extensive selection of personal protective clothing available for purchase. As a professional in the occupational health and safety industry, we understand the critical importance of high-quality protective gear in ensuring the well-being of employees in various work environments.</p>
-          <p class="left-align light">Our range of personal protective clothing includes items such as safety vests, helmets, gloves, goggles, ear protection, and more. These products are designed to meet industry standards and provide maximum protection against potential hazards in the workplace. Whether your employees work in construction, manufacturing, healthcare, or any other field requiring protective gear, we have the right solutions to meet their needs.</p>
-          <p class="left-align light">In addition to offering a wide variety of products, we are committed to ensuring the quality and durability of each item. We source our personal protective clothing from reputable manufacturers known for their adherence to safety regulations and standards. By choosing our products, you can have peace of mind knowing that your employees are well-protected while on the job.</p>
-          <p class="left-align light">Furthermore, our team of experts is available to provide guidance and assistance in selecting the most suitable personal protective clothing for your specific requirements. We understand that every workplace is unique, and we are dedicated to helping you find the right solutions tailored to your industry and workforce.</p>
-          <p class="left-align light">If you are interested in learning more about our products or placing an order, please do not hesitate to contact us. We would be more than happy to discuss your needs and provide any additional information you may require.</p>
-          <p class="left-align light">Thank you for considering our range of personal protective clothing. We look forward to the opportunity to serve you and contribute to the safety and well-being of your employees.</p>
+          <hr class="custom-hr">
+          <p class="left-align light">We have an extensive selection of personal protective clothing available for
+            purchase. As a professional in the occupational health and safety industry, we understand the critical
+            importance of high-quality protective gear in ensuring the well-being of employees in various work
+            environments.</p>
+          <p class="left-align light">Our range of personal protective clothing includes items such as safety vests,
+            helmets, gloves, goggles, ear protection, and more. These products are designed to meet industry standards
+            and provide maximum protection against potential hazards in the workplace. Whether your employees work in
+            construction, manufacturing, healthcare, or any other field requiring protective gear, we have the right
+            solutions to meet their needs.</p>
+          <p class="left-align light">In addition to offering a wide variety of products, we are committed to ensuring
+            the quality and durability of each item. We source our personal protective clothing from reputable
+            manufacturers known for their adherence to safety regulations and standards. By choosing our products, you
+            can have peace of mind knowing that your employees are well-protected while on the job.</p>
+          <p class="left-align light">Furthermore, our team of experts is available to provide guidance and assistance
+            in selecting the most suitable personal protective clothing for your specific requirements. We understand
+            that every workplace is unique, and we are dedicated to helping you find the right solutions tailored to
+            your industry and workforce.</p>
+          <p class="left-align light">If you are interested in learning more about our products or placing an order,
+            please do not hesitate to contact us. We would be more than happy to discuss your needs and provide any
+            additional information you may require.</p>
+          <p class="left-align light">Thank you for considering our range of personal protective clothing. We look
+            forward to the opportunity to serve you and contribute to the safety and well-being of your employees.</p>
           <h6 class="left-align light red-text">1. Reflective safety suit- Blue</h6>
           <h6 class="left-align light red-text">2. Safety boots Black</h6>
           <h6 class="left-align light red-text">3. Welding gloves,</h6>
-          <h6 class="left-align light red-text">4. Reflective vests orange, Safety Hard Hat Builders,Safety Hard Hat Plant </h6>
+          <h6 class="left-align light red-text">4. Reflective vests orange, Safety Hard Hat Builders,Safety Hard Hat
+            Plant </h6>
         </div>
       </div>
 
     </div>
   </div>
   <footer class="page-footer" id="contact-footer">
-    <div class=""> 
+    <div class="">
       <div class="row">
         <div class="col l4 s12">
           <h5 class="white-text">About Us</h5>
-          <ul><li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>CETA accreditation number: ACC/22/07/00019</a></li></ul>
-          <ul><li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>TETA accreditation number: TETA21-1318</a></li></ul>
-          <ul><li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>DEPARTMENT OF LABOUR APPROVAL NUMBER: DMR 930</a></li></ul>
-          <ul><li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>BBEEE: LEVEL 1 CONTRIBUTOR</a></li></ul>
+          <ul><a id="logo-container" class="brand-logo"><img src="Moata Logos/moata-group.png" width="200"></a></ul>
+          <ul><strong>Moata School Pty Ltd</strong> ("the parent") and <strong>Mitana Training Consultants</strong>
+            ("the subsidiary") are compliant fully registered and accredited training providers of Heavy Vehicles
+            courses, Lifting & Safety courses, Artisan courses, Mining courses, etc. To learn more about our Compliance
+            and Legal standing <a href="legal.html" class="red-text">click here.</a> </ul>
+          <ul>
+            <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>CETA accreditation
+                number: ACC/22/07/00019</a></li>
+          </ul>
+          <ul>
+            <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>TETA accreditation
+                number: TETA21-1318</a></li>
+          </ul>
+          <ul>
+            <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>DEPARTMENT OF
+                LABOUR APPROVAL NUMBER: DMR 930</a></li>
+          </ul>
+          <ul>
+            <li><a class="grey-text text-lighten-4"><i class="material-icons left red-text">check</i>BBEEE: LEVEL 1
+                CONTRIBUTOR</a></li>
+          </ul>
         </div>
         <div class="col l3 s12">
           <h5 class="white-text">Contact Info</h5>
           <ul>
-            <li><a class="white-text"><i class="material-icons left red-text">location_on</i>296 Justice Mahommed, Shop 3A Barclay Square Shopping Centre, Pretoria, 0002.</a>
+            <li><a href="https://maps.app.goo.gl/z5KqYy9TiVWQWsJU9" target="_blank" class="white-text"><i
+                  class="material-icons left red-text">location_on</i>296 Justice Mahommed, Shop 3A Barclay Square
+                Shopping Centre, Pretoria, 0002.</a>
             </li>
           </ul>
           <ul>
-            <li><a href="tel:+27127713972" class="white-text"><i class="material-icons left red-text">call</i>012 771 3972</a>
+            <li><a href="tel:+27127713972" class="white-text"><i class="material-icons left red-text">call</i>012 771
+                3972</a>
             </li>
           </ul>
           <ul>
@@ -187,18 +350,19 @@
                   class="material-icons left red-text">email</i>info@moataschool.co.za</a></li>
           </ul>
           <ul>
-            <li><a class="white-text"><i
-                  class="material-icons left red-text">access_time</i>Mon - Sat: 9:00 - 18:00</a></li>
+            <li><a class="white-text"><i class="material-icons left red-text">access_time</i>Mon - Sat: 9:00 - 18:00</a>
+            </li>
           </ul>
           <h5 class="white-text">Connect with us</h5>
           <ul>
-            <a class="white-text" href="https://www.facebook.com/moataschoolZA"><img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Facebook_icon_%28black%29.svg/1024px-Facebook_icon_%28black%29.svg.png"
-                width="38"></a>
-                <a class="white-text" href="https://www.instagram.com/moataschool"><img src="insta.png" width="40"></a>
-            <a class="white-text" href=""><img src="twitter_x.png" width="40"></a>
-            <a class="white-text" href="https://www.tiktok.com/@moataschoolza"><img src="icons/tiktok.png" width="43"></a>
-            <a class="white-text" href="https://www.youtube.com/@moataschool3264"><img src="youtube_black.png"
+            <a class="white-text" href="https://www.facebook.com/moataschoolZA"><img src="moata-icons/Facebook.png"
+                width="40"></a>
+            <a class="white-text" href="https://www.instagram.com/moataschool"><img src="moata-icons/Instagram.png"
+                width="40"></a>
+            <a class="white-text" href=""><img src="moata-icons/X.png" width="40"></a>
+            <a class="white-text" href="https://www.tiktok.com/@moataschoolza"><img src="moata-icons/TikTok.png"
+                width="40"></a>
+            <a class="white-text" href="https://www.youtube.com/@moataschool3264"><img src="moata-icons/YouTube.png"
                 width="40"></a>
           </ul>
 
@@ -206,81 +370,81 @@
         <div class="col l5 s12">
           <h5 class="white-text">Leave us a feedback</h5>
           <!-- Contact Form -->
-           <section>
-        <div class="col s12 m20 l6">
-          <div id="contactModal" class="">
-            <div class="modal-content">
-              <form method="post" action="your_script.php" id="contactModal">
-                <label for="name" class="black-text"></label>
-                <input type="text" name="name" id="name" placeholder="Name*" required>
-                <!-- <br> -->
-                <label for="email" class="black-text"></label>
-                <input type="email" name="email" id="email" placeholder="Email*" required>
-                <!-- <br> -->
-                <label for="subject" class="black-text"></label>
-                <input type="text" name="subject" id="subject" placeholder="Subject">
-                <!-- <br> -->
-                <label for="message" class="black-text"></label>
-                <textarea name="message" id="message" placeholder="Write Your Message Here*" required cols="30"
-                  rows="5"></textarea>
-                <!-- <br> -->
-                <button class="" id="btn"><a class="white-text">Send</a></button>
-              </form>
+          <section>
+            <div class="col s12 m20 l6">
+              <div id="contactModal" class="">
+                <div class="modal-content">
+                  <form method="post" action="your_script.php" id="contactModal">
+                    <label for="name" class="black-text"></label>
+                    <input type="text" name="name" id="name" placeholder="Name*" required>
+                    <!-- <br> -->
+                    <label for="email" class="black-text"></label>
+                    <input type="email" name="email" id="email" placeholder="Email*" required>
+                    <!-- <br> -->
+                    <label for="subject" class="black-text"></label>
+                    <input type="text" name="subject" id="subject" placeholder="Subject">
+                    <!-- <br> -->
+                    <label for="message" class="black-text"></label>
+                    <textarea name="message" id="message" placeholder="Write Your Message Here*" required cols="30"
+                      rows="5"></textarea>
+                    <!-- <br> -->
+                    <button class="" id="btn"><a class="white-text">Send</a></button>
+                  </form>
+
+                </div>
+              </div>
 
             </div>
-          </div>
+          </section>
 
-        </div>
-        </section>
+          <section>
 
-        <section>
+            <script src="https://smtpjs.com/v3/smtp.js"></script>
+            <script>
+              var btn = document.getElementById('btn');
+              btn.addEventListener('click', function (e) {
+                e.preventDefault();
 
-          <script src="https://smtpjs.com/v3/smtp.js"></script>
-          <script>
-            var btn = document.getElementById('btn');
-            btn.addEventListener('click', function (e) {
-              e.preventDefault();
-      
-              var name = document.getElementById('name').value;
-              var email = document.getElementById('email').value;
-              var subject = document.getElementById('subject').value;
-              var message = document.getElementById('message').value;
-      
-              // Check if any required fields are empty
-              if (!name || !email || !message) {
-                alert("Please fill in all the required fields.");
-                return; // Prevent sending the email if fields are missing
-              }
-      
-              var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
-      
-              Email.send({
-                SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", //for messages.semtexagecny@outlook.com
-                To: 'messages.semtexagency@outlook.com',
-                From: "messages.semtexagency@outlook.com",
-                Subject: "Urgent: A client is trying to get in touch - Moata school home page",
-                Body: body
-              }).then(
-                function (message) {
-                  alert("Thank you, we will be in touch shortly!");
-      
-                  // Clear form fields after successful submission
-                  setTimeout(function () {
-                    document.getElementById('name').value = '';
-                    document.getElementById('email').value = '';
-                    document.getElementById('subject').value = '';
-                    document.getElementById('message').value = '';
-                  }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var subject = document.getElementById('subject').value;
+                var message = document.getElementById('message').value;
+
+                // Check if any required fields are empty
+                if (!name || !email || !message) {
+                  alert("Please fill in all the required fields.");
+                  return; // Prevent sending the email if fields are missing
                 }
-              ).catch(
-                function (error) {
-                  console.log("Email sending error:", error);
-                }
-              );
-            });
-          </script>
-      
-          <!-- form ends here -->
+
+                var body = 'name: ' + name + '<br/> email: ' + email + '<br/> subject: ' + subject + '<br/> message: ' + message;
+
+                Email.send({
+                  SecureToken: "dd2bf18f-09a5-46bb-961d-8dc768301175", //for messages.semtexagecny@outlook.com
+                  To: 'messages.semtexagency@outlook.com',
+                  From: "messages.semtexagency@outlook.com",
+                  Subject: "Urgent: A client is trying to get in touch - Moata school home page",
+                  Body: body
+                }).then(
+                  function (message) {
+                    alert("Thank you, we will be in touch shortly!");
+
+                    // Clear form fields after successful submission
+                    setTimeout(function () {
+                      document.getElementById('name').value = '';
+                      document.getElementById('email').value = '';
+                      document.getElementById('subject').value = '';
+                      document.getElementById('message').value = '';
+                    }, 2000); // Delay clearing fields by 3000 milliseconds (3 seconds)
+                  }
+                ).catch(
+                  function (error) {
+                    console.log("Email sending error:", error);
+                  }
+                );
+              });
+            </script>
+
+            <!-- form ends here -->
 
           </section>
         </div>
@@ -288,8 +452,8 @@
     </div>
     <div class="footer-copyright">
       <div class="container">
-        Copyright © 2024 Moata School (Pty) Ltd. All Rights Reserved. Designed by <a class="white-text text-indigo-darken-4"
-          href="https://www.semtexagency.co.za">Semtex Agency</a>
+        Copyright © 2024 Moata School (Pty) Ltd. All Rights Reserved. Designed by <a
+          class="white-text text-indigo-darken-4" href="https://www.semtexagency.co.za">Semtex Agency</a>
       </div>
     </div>
   </footer>
@@ -300,5 +464,6 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
-  </body>
+</body>
+
 </html>
