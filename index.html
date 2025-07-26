@@ -12,8 +12,10 @@
     gtag('config', 'G-1MKK806F7W');
   </script>
 
-                  <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FEB3JNE14"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-7FEB3JNE14'); </script>
-                   
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7FEB3JNE14"></script>
+  <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-7FEB3JNE14'); </script>
+
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home | Moata School</title>
@@ -423,8 +425,8 @@
           <h1>
             <strng> Verify certificates online in seconds!</strng>
           </h1>
-          <a href="Pre-validate.html" 
-            class="btn-large waves-effect waves-light carousel-buttons white-text">Learn More</a>
+          <a href="Pre-validate.html" class="btn-large waves-effect waves-light carousel-buttons white-text">Learn
+            More</a>
         </div>
       </div>
       <div class="carousel-item">
@@ -736,6 +738,64 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <!-- Cookie Notice -->
+  <div id="cookie-notice" class="card-panel red lighten-5"
+    style="position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; display: none; margin: 0; border-radius: 0;">
+    <div class="container">
+      <div class="row" style="margin: 0;">
+        <div class="col s12 m9">
+          <span class="black-text">
+            We use cookies to ensure you get the best experience on our website.
+            <a href="privacy.html" class="red-text text-darken-2">Learn more</a>
+          </span>
+        </div>
+        <div class="col s12 m3 right-align">
+          <a class="waves-effect waves-light btn-small red darken-2 white-text" onclick="acceptCookies()">Got it!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set a cookie with 1 hour expiry
+    function setCookie(name, value, hours) {
+      const date = new Date();
+      date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+      document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+    }
+
+    // Get a cookie by name
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+    }
+
+    // Show banner if cookie doesn't exist
+    document.addEventListener("DOMContentLoaded", function () {
+      if (!getCookie("cookiesAccepted")) {
+        document.getElementById("cookie-notice").style.display = "block";
+      }
+    });
+
+    function acceptCookies() {
+      setCookie("cookiesAccepted", "true", 1); // expires in 1 hour
+      document.getElementById("cookie-notice").style.display = "none";
+    }
+  </script>
+
+  <style>
+    #cookie-notice .btn-small {
+      margin-top: 10px;
+    }
+
+    @media (min-width: 600px) {
+      #cookie-notice .btn-small {
+        margin-top: 0;
+      }
+    }
+  </style>
 
 </body>
 
